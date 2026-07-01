@@ -1,3 +1,12 @@
+import joblib
+
+# Load your existing model
+model = joblib.load("bank_churn_pipeline.pkl")
+
+# Re-save it with better compatibility
+joblib.dump(model, "bank_churn_pipeline.pkl", compress=3, protocol=4)
+
+print("Model successfully re-saved!")
 import streamlit as st
 import pandas as pd
 import joblib
