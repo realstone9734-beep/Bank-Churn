@@ -1,12 +1,15 @@
 import joblib
+import sklearn
 
-# Load your existing model
-model = joblib.load("bank_churn_pipeline.pkl")
+# Load the model
+pipeline = joblib.load("bank_churn_pipeline.pkl")
 
-# Re-save it with better compatibility
-joblib.dump(model, "bank_churn_pipeline.pkl", compress=3, protocol=4)
+print("Current sklearn version:", sklearn.__version__)
 
-print("Model successfully re-saved!")
+# Re-save with compatibility settings
+joblib.dump(pipeline, "bank_churn_pipeline.pkl", compress=3, protocol=4)
+
+print("✅ Model re-saved successfully!")
 import streamlit as st
 import pandas as pd
 import joblib
