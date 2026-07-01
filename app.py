@@ -1,18 +1,12 @@
 import joblib
-import sklearn
 
-# Load the model
-pipeline = joblib.load("bank_churn_pipeline.pkl")
+# Load and re-save
+model = joblib.load("bank_churn_pipeline.pkl")
+joblib.dump(model, "bank_churn_pipeline.pkl", compress=3, protocol=4)
 
-print("Current sklearn version:", sklearn.__version__)
-
-# Re-save with compatibility settings
-joblib.dump(pipeline, "bank_churn_pipeline.pkl", compress=3, protocol=4)
-
-print("✅ Model re-saved successfully!")
+print("Model re-saved with protocol 4")
 import streamlit as st
 import pandas as pd
-import joblib
 import plotly.graph_objects as go
 import plotly.express as px
 import seaborn as sns
