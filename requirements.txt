@@ -1,8 +1,8 @@
 streamlit
-joblib
-plotly
-seaborn
+joblib==1.4.2
+scikit-learn==1.3.2   # or 1.4.2 / 1.5.0 — try matching your local version
 pandas
 numpy
-scikit-learn
+plotly
+seaborn
 matplotlib
